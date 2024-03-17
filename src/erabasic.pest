@@ -1,0 +1,264 @@
+WHITESPACE = _{ " " | "\t" }
+// keywords
+sif_keyword = @{ ^"sif" ~ !letter_or_digit }
+if_keyword = @{ ^"if" ~ !letter_or_digit}
+elseif_keyword = @{ ^"elseif" ~ !letter_or_digit }
+else_keyword = @{ ^"else" ~ !letter_or_digit }
+endif_keyword = @{ ^"endif" ~ !letter_or_digit }
+repeat_keyword = @{ ^"repeat" ~ !letter_or_digit }
+rend_keyword = @{ ^"rend" ~ !letter_or_digit }
+continue_keyword = @{ ^"continue" ~ !letter_or_digit }
+break_keyword = @{ ^"break" ~ !letter_or_digit }
+for_keyword = @{ ^"for" ~ !letter_or_digit }
+next_keyword = @{ ^"next" ~ !letter_or_digit }
+while_keyword = @{ ^"while" ~ !letter_or_digit }
+wend_keyword = @{ ^"wend" ~ !letter_or_digit }
+do_keyword = @{ ^"do" ~ !letter_or_digit }
+loop_keyword = @{ ^"loop" ~ !letter_or_digit }
+selectcase_keyword = @{ ^"selectcase" ~ !letter_or_digit }
+case_keyword = @{ ^"case" ~ !letter_or_digit }
+caseelse_keyword = @{ ^"caseelse" ~ !letter_or_digit }
+endselect_keyword = @{ ^"endselect" ~ !letter_or_digit }
+is_keyword = @{ ^"is" ~ !letter_or_digit }
+to_keyword = @{ ^"to" ~ !letter_or_digit }
+
+keyword = {
+    sif_keyword
+    | if_keyword
+    | elseif_keyword
+    | else_keyword
+    | endif_keyword
+    | repeat_keyword
+    | rend_keyword
+    | continue_keyword
+    | break_keyword
+    | for_keyword
+    | next_keyword
+    | while_keyword
+    | wend_keyword
+    | do_keyword
+    | loop_keyword
+    | selectcase_keyword
+    | case_keyword
+    | caseelse_keyword
+    | endselect_keyword
+    | is_keyword
+    | to_keyword
+}
+
+lparen = _{ "(" }
+rparen = _{ ")" }
+
+comma = _{ "," }
+colon = _{ ":" }
+semi = _{ ";" }
+dot = _{ "." }
+at = _{ "@" }
+double_quote = _{ "\"" }
+
+// comment
+COMMENT = { semi ~ comment_body }
+comment_body = { (!NEWLINE ~ ANY)* }
+
+// assign
+
+assign_none = @{ "=" }
+assign_add = @{ "+=" }
+assign_sub = @{ "-=" }
+assign_mul = @{ "*=" }
+assign_div = @{ "/=" }
+
+assign = { assign_add | assign_sub | assign_mul | assign_div | assign_none }
+
+// operator
+add_op = @{ "+" }
+sub_op = @{ "-" }
+mul_op = @{ "*" }
+div_op = @{ "/" }
+equals_op = @{ "==" }
+not_equals_op = @{ "!=" }
+lt_op = @{ "<" }
+lteq_op = @{ "<=" }
+gt_op = @{ ">" }
+gteq_op = @{ ">=" }
+
+operator = {
+  conditional_operator
+  | add_op
+  | sub_op
+  | mul_op
+  | div_op
+}
+conditional_operator = {
+  equals_op
+  | not_equals_op
+  | lteq_op
+  | gteq_op
+  | lt_op
+  | gt_op
+}
+
+// identifier
+letter = @{ ASCII_ALPHA | "_" }
+letter_or_digit = @{ letter | NUMBER }
+identifier = @{ !keyword ~ letter ~ letter_or_digit* }
+
+function_identifier = { identifier }
+variable_identifier = { identifier }
+label_identifier = { identifier }
+
+// literal
+decimal_literal = @{ NUMBER+ ~ dot ~ NUMBER+ }
+integer_literal = @{ NUMBER+ }
+string_literal = ${ double_quote ~ string_body ~ double_quote }
+string_body = @{ char* }
+char = _{
+    !("\"" | "\\") ~ ANY
+    | "\\" ~ ("\"" | "\\" | "/" | "b" | "f" | "n" | "r" | "t")
+}
+
+literal = _{
+    string_literal
+    | decimal_literal
+    | integer_literal
+}
+// array
+array = {
+    identifier ~ array_access+
+}
+array_access = _{
+	colon
+    ~ ((lparen ~ expression ~ rparen) | literal)
+}
+
+function_call = {
+    function_identifier ~ lparen ~ expression_list? ~ rparen
+}
+
+primary = {
+    (lparen ~ expression ~ rparen)
+    | function_call
+    | literal
+    | identifier
+}
+
+// expression
+expression_list = _{
+    expression ~ (comma ~ expression)*
+}
+expression_root = _{
+	array
+    | primary
+}
+
+expression = {
+    binary_expression
+    | expression_root
+}
+
+binary_expression = {
+	expression_root ~ operator ~ expression
+}
+
+// functions
+function_declare = {
+    at ~ function_identifier ~ function_parameters? ~ NEWLINE
+    ~ function_body
+}
+function_parameters = {
+	lparen ~ (identifier ~ (comma ~ identifier)*)? ~ rparen
+}
+function_body = {
+	(statement | NEWLINE)*
+}
+statement = {
+  (sif_statement
+  | if_statement
+  | repeat_statement
+  | for_statement
+  | while_statement
+  | do_loop_statement
+  | select_statement
+  | assign_statement
+  | break_keyword
+  | continue_keyword
+  | expression) ~ NEWLINE
+}
+
+assign_statement = {
+    (array | identifier) ~ assign ~ expression
+}
+block = {
+    (statement | NEWLINE)*
+}
+// if statement
+if_statement = {
+    if_keyword ~ expression ~ NEWLINE
+    ~ block
+    ~ else_if_statement*
+    ~ else_statement?
+    ~ endif_keyword
+}
+else_if_statement = {
+    elseif_keyword ~ expression ~ NEWLINE
+    ~ block
+}
+else_statement = {
+    else_keyword ~ NEWLINE
+    ~ block
+}
+// sif statement
+sif_statement = {
+    sif_keyword ~ expression ~ NEWLINE
+    ~ statement
+}
+// repeat statement
+repeat_statement = {
+    repeat_keyword ~ expression ~ NEWLINE
+    ~ block
+    ~ rend_keyword
+}
+// for statement
+for_statement = {
+    for_keyword ~ expression ~ (comma ~ expression){2,3} ~ NEWLINE
+    ~ block
+    ~ next_keyword
+}
+// while statement
+while_statement = {
+    while_keyword ~ expression ~ NEWLINE
+    ~ block
+    ~ wend_keyword
+}
+// do loop statement
+do_loop_statement = {
+    do_keyword ~ NEWLINE
+    ~ block
+    ~ loop_keyword ~ expression
+}
+// select statement
+select_statement = {
+    selectcase_keyword ~ expression ~ NEWLINE
+    ~ case_statement+
+    ~ case_else_statement?
+    ~ endselect_keyword
+}
+case_statement = {
+    case_keyword ~ case_condition_list ~ NEWLINE
+    ~ block
+}
+case_else_statement = {
+    caseelse_keyword ~ NEWLINE
+    ~ block
+}
+case_condition_list = {
+    case_condition ~ (comma ~ case_condition)*
+}
+case_condition = {
+    (expression ~ to_keyword ~ expression)
+    | (is_keyword ~ conditional_operator ~ expression)
+    | literal
+    | identifier
+}
+
+file = _{ SOI ~ (function_declare | NEWLINE)* ~ EOI }
