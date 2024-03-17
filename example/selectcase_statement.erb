@@ -1,0 +1,21 @@
+@select_case_statement
+  selectcase CFLAG:0:0
+    case 1
+      a
+    case 2, 3
+      b
+    case 10 to 20
+      c
+    case is <= 30
+      d
+    case 40, 5 * 10 to 6 * 10, is <= 10 * 10
+      e
+    caseelse
+      f
+  endselect
+
+@select_case_only
+  selectcase a
+    case 1
+      a
+  endselect

@@ -1,0 +1,1338 @@
+---
+source: src/snapshot_test.rs
+expression: file
+---
+[
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@select_case_statement\n  selectcase CFLAG:0:0\n    case 1\n      a\n    case 2, 3\n      b\n    case 10 to 20\n      c\n    case is <= 30\n      d\n    case 40, 5 * 10 to 6 * 10, is <= 10 * 10\n      e\n    caseelse\n      f\n  endselect\n\n",
+            start: 0,
+            end: 226,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "select_case_statement",
+                    start: 1,
+                    end: 22,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "select_case_statement",
+                            start: 1,
+                            end: 22,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "selectcase CFLAG:0:0\n    case 1\n      a\n    case 2, 3\n      b\n    case 10 to 20\n      c\n    case is <= 30\n      d\n    case 40, 5 * 10 to 6 * 10, is <= 10 * 10\n      e\n    caseelse\n      f\n  endselect\n\n",
+                    start: 25,
+                    end: 226,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "selectcase CFLAG:0:0\n    case 1\n      a\n    case 2, 3\n      b\n    case 10 to 20\n      c\n    case is <= 30\n      d\n    case 40, 5 * 10 to 6 * 10, is <= 10 * 10\n      e\n    caseelse\n      f\n  endselect",
+                            start: 25,
+                            end: 224,
+                        },
+                        inner: [
+                            Pair {
+                                rule: select_statement,
+                                span: Span {
+                                    str: "selectcase CFLAG:0:0\n    case 1\n      a\n    case 2, 3\n      b\n    case 10 to 20\n      c\n    case is <= 30\n      d\n    case 40, 5 * 10 to 6 * 10, is <= 10 * 10\n      e\n    caseelse\n      f\n  endselect",
+                                    start: 25,
+                                    end: 224,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: selectcase_keyword,
+                                        span: Span {
+                                            str: "selectcase",
+                                            start: 25,
+                                            end: 35,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "CFLAG:0:0",
+                                            start: 36,
+                                            end: 45,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: array,
+                                                span: Span {
+                                                    str: "CFLAG:0:0",
+                                                    start: 36,
+                                                    end: 45,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "CFLAG",
+                                                            start: 36,
+                                                            end: 41,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "0",
+                                                            start: 42,
+                                                            end: 43,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "0",
+                                                            start: 44,
+                                                            end: 45,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: case_statement,
+                                        span: Span {
+                                            str: "case 1\n      a\n",
+                                            start: 50,
+                                            end: 65,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: case_keyword,
+                                                span: Span {
+                                                    str: "case",
+                                                    start: 50,
+                                                    end: 54,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: case_condition_list,
+                                                span: Span {
+                                                    str: "1",
+                                                    start: 55,
+                                                    end: 56,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "1",
+                                                            start: 55,
+                                                            end: 56,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: integer_literal,
+                                                                span: Span {
+                                                                    str: "1",
+                                                                    start: 55,
+                                                                    end: 56,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "a\n",
+                                                    start: 63,
+                                                    end: 65,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 63,
+                                                            end: 64,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "a",
+                                                                    start: 63,
+                                                                    end: 64,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "a",
+                                                                            start: 63,
+                                                                            end: 64,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "a",
+                                                                                    start: 63,
+                                                                                    end: 64,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: case_statement,
+                                        span: Span {
+                                            str: "case 2, 3\n      b\n",
+                                            start: 69,
+                                            end: 87,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: case_keyword,
+                                                span: Span {
+                                                    str: "case",
+                                                    start: 69,
+                                                    end: 73,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: case_condition_list,
+                                                span: Span {
+                                                    str: "2, 3",
+                                                    start: 74,
+                                                    end: 78,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "2",
+                                                            start: 74,
+                                                            end: 75,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: integer_literal,
+                                                                span: Span {
+                                                                    str: "2",
+                                                                    start: 74,
+                                                                    end: 75,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "3",
+                                                            start: 77,
+                                                            end: 78,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: integer_literal,
+                                                                span: Span {
+                                                                    str: "3",
+                                                                    start: 77,
+                                                                    end: 78,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "b\n",
+                                                    start: 85,
+                                                    end: 87,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "b",
+                                                            start: 85,
+                                                            end: 86,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "b",
+                                                                    start: 85,
+                                                                    end: 86,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "b",
+                                                                            start: 85,
+                                                                            end: 86,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "b",
+                                                                                    start: 85,
+                                                                                    end: 86,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: case_statement,
+                                        span: Span {
+                                            str: "case 10 to 20\n      c\n",
+                                            start: 91,
+                                            end: 113,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: case_keyword,
+                                                span: Span {
+                                                    str: "case",
+                                                    start: 91,
+                                                    end: 95,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: case_condition_list,
+                                                span: Span {
+                                                    str: "10 to 20",
+                                                    start: 96,
+                                                    end: 104,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "10 to 20",
+                                                            start: 96,
+                                                            end: 104,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "10",
+                                                                    start: 96,
+                                                                    end: 98,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "10",
+                                                                            start: 96,
+                                                                            end: 98,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: integer_literal,
+                                                                                span: Span {
+                                                                                    str: "10",
+                                                                                    start: 96,
+                                                                                    end: 98,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: to_keyword,
+                                                                span: Span {
+                                                                    str: "to",
+                                                                    start: 99,
+                                                                    end: 101,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "20",
+                                                                    start: 102,
+                                                                    end: 104,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "20",
+                                                                            start: 102,
+                                                                            end: 104,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: integer_literal,
+                                                                                span: Span {
+                                                                                    str: "20",
+                                                                                    start: 102,
+                                                                                    end: 104,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "c\n",
+                                                    start: 111,
+                                                    end: 113,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "c",
+                                                            start: 111,
+                                                            end: 112,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "c",
+                                                                    start: 111,
+                                                                    end: 112,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "c",
+                                                                            start: 111,
+                                                                            end: 112,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "c",
+                                                                                    start: 111,
+                                                                                    end: 112,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: case_statement,
+                                        span: Span {
+                                            str: "case is <= 30\n      d\n",
+                                            start: 117,
+                                            end: 139,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: case_keyword,
+                                                span: Span {
+                                                    str: "case",
+                                                    start: 117,
+                                                    end: 121,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: case_condition_list,
+                                                span: Span {
+                                                    str: "is <= 30",
+                                                    start: 122,
+                                                    end: 130,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "is <= 30",
+                                                            start: 122,
+                                                            end: 130,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: is_keyword,
+                                                                span: Span {
+                                                                    str: "is",
+                                                                    start: 122,
+                                                                    end: 124,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                            Pair {
+                                                                rule: conditional_operator,
+                                                                span: Span {
+                                                                    str: "<=",
+                                                                    start: 125,
+                                                                    end: 127,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: lteq_op,
+                                                                        span: Span {
+                                                                            str: "<=",
+                                                                            start: 125,
+                                                                            end: 127,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "30",
+                                                                    start: 128,
+                                                                    end: 130,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "30",
+                                                                            start: 128,
+                                                                            end: 130,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: integer_literal,
+                                                                                span: Span {
+                                                                                    str: "30",
+                                                                                    start: 128,
+                                                                                    end: 130,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "d\n",
+                                                    start: 137,
+                                                    end: 139,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "d",
+                                                            start: 137,
+                                                            end: 138,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "d",
+                                                                    start: 137,
+                                                                    end: 138,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "d",
+                                                                            start: 137,
+                                                                            end: 138,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "d",
+                                                                                    start: 137,
+                                                                                    end: 138,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: case_statement,
+                                        span: Span {
+                                            str: "case 40, 5 * 10 to 6 * 10, is <= 10 * 10\n      e\n",
+                                            start: 143,
+                                            end: 192,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: case_keyword,
+                                                span: Span {
+                                                    str: "case",
+                                                    start: 143,
+                                                    end: 147,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: case_condition_list,
+                                                span: Span {
+                                                    str: "40, 5 * 10 to 6 * 10, is <= 10 * 10",
+                                                    start: 148,
+                                                    end: 183,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "40",
+                                                            start: 148,
+                                                            end: 150,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: integer_literal,
+                                                                span: Span {
+                                                                    str: "40",
+                                                                    start: 148,
+                                                                    end: 150,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "5 * 10 to 6 * 10",
+                                                            start: 152,
+                                                            end: 168,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "5 * 10",
+                                                                    start: 152,
+                                                                    end: 158,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: binary_expression,
+                                                                        span: Span {
+                                                                            str: "5 * 10",
+                                                                            start: 152,
+                                                                            end: 158,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: primary,
+                                                                                span: Span {
+                                                                                    str: "5",
+                                                                                    start: 152,
+                                                                                    end: 153,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: integer_literal,
+                                                                                        span: Span {
+                                                                                            str: "5",
+                                                                                            start: 152,
+                                                                                            end: 153,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: operator,
+                                                                                span: Span {
+                                                                                    str: "*",
+                                                                                    start: 154,
+                                                                                    end: 155,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: mul_op,
+                                                                                        span: Span {
+                                                                                            str: "*",
+                                                                                            start: 154,
+                                                                                            end: 155,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: expression,
+                                                                                span: Span {
+                                                                                    str: "10",
+                                                                                    start: 156,
+                                                                                    end: 158,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: primary,
+                                                                                        span: Span {
+                                                                                            str: "10",
+                                                                                            start: 156,
+                                                                                            end: 158,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: integer_literal,
+                                                                                                span: Span {
+                                                                                                    str: "10",
+                                                                                                    start: 156,
+                                                                                                    end: 158,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: to_keyword,
+                                                                span: Span {
+                                                                    str: "to",
+                                                                    start: 159,
+                                                                    end: 161,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "6 * 10",
+                                                                    start: 162,
+                                                                    end: 168,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: binary_expression,
+                                                                        span: Span {
+                                                                            str: "6 * 10",
+                                                                            start: 162,
+                                                                            end: 168,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: primary,
+                                                                                span: Span {
+                                                                                    str: "6",
+                                                                                    start: 162,
+                                                                                    end: 163,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: integer_literal,
+                                                                                        span: Span {
+                                                                                            str: "6",
+                                                                                            start: 162,
+                                                                                            end: 163,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: operator,
+                                                                                span: Span {
+                                                                                    str: "*",
+                                                                                    start: 164,
+                                                                                    end: 165,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: mul_op,
+                                                                                        span: Span {
+                                                                                            str: "*",
+                                                                                            start: 164,
+                                                                                            end: 165,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: expression,
+                                                                                span: Span {
+                                                                                    str: "10",
+                                                                                    start: 166,
+                                                                                    end: 168,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: primary,
+                                                                                        span: Span {
+                                                                                            str: "10",
+                                                                                            start: 166,
+                                                                                            end: 168,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: integer_literal,
+                                                                                                span: Span {
+                                                                                                    str: "10",
+                                                                                                    start: 166,
+                                                                                                    end: 168,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "is <= 10 * 10",
+                                                            start: 170,
+                                                            end: 183,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: is_keyword,
+                                                                span: Span {
+                                                                    str: "is",
+                                                                    start: 170,
+                                                                    end: 172,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                            Pair {
+                                                                rule: conditional_operator,
+                                                                span: Span {
+                                                                    str: "<=",
+                                                                    start: 173,
+                                                                    end: 175,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: lteq_op,
+                                                                        span: Span {
+                                                                            str: "<=",
+                                                                            start: 173,
+                                                                            end: 175,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "10 * 10",
+                                                                    start: 176,
+                                                                    end: 183,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: binary_expression,
+                                                                        span: Span {
+                                                                            str: "10 * 10",
+                                                                            start: 176,
+                                                                            end: 183,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: primary,
+                                                                                span: Span {
+                                                                                    str: "10",
+                                                                                    start: 176,
+                                                                                    end: 178,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: integer_literal,
+                                                                                        span: Span {
+                                                                                            str: "10",
+                                                                                            start: 176,
+                                                                                            end: 178,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: operator,
+                                                                                span: Span {
+                                                                                    str: "*",
+                                                                                    start: 179,
+                                                                                    end: 180,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: mul_op,
+                                                                                        span: Span {
+                                                                                            str: "*",
+                                                                                            start: 179,
+                                                                                            end: 180,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                            Pair {
+                                                                                rule: expression,
+                                                                                span: Span {
+                                                                                    str: "10",
+                                                                                    start: 181,
+                                                                                    end: 183,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: primary,
+                                                                                        span: Span {
+                                                                                            str: "10",
+                                                                                            start: 181,
+                                                                                            end: 183,
+                                                                                        },
+                                                                                        inner: [
+                                                                                            Pair {
+                                                                                                rule: integer_literal,
+                                                                                                span: Span {
+                                                                                                    str: "10",
+                                                                                                    start: 181,
+                                                                                                    end: 183,
+                                                                                                },
+                                                                                                inner: [],
+                                                                                            },
+                                                                                        ],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "e\n",
+                                                    start: 190,
+                                                    end: 192,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "e",
+                                                            start: 190,
+                                                            end: 191,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "e",
+                                                                    start: 190,
+                                                                    end: 191,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "e",
+                                                                            start: 190,
+                                                                            end: 191,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "e",
+                                                                                    start: 190,
+                                                                                    end: 191,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: case_else_statement,
+                                        span: Span {
+                                            str: "caseelse\n      f\n",
+                                            start: 196,
+                                            end: 213,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: caseelse_keyword,
+                                                span: Span {
+                                                    str: "caseelse",
+                                                    start: 196,
+                                                    end: 204,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "f\n",
+                                                    start: 211,
+                                                    end: 213,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "f",
+                                                            start: 211,
+                                                            end: 212,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "f",
+                                                                    start: 211,
+                                                                    end: 212,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "f",
+                                                                            start: 211,
+                                                                            end: 212,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "f",
+                                                                                    start: 211,
+                                                                                    end: 212,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: endselect_keyword,
+                                        span: Span {
+                                            str: "endselect",
+                                            start: 215,
+                                            end: 224,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@select_case_only\n  selectcase a\n    case 1\n      a\n  endselect\n",
+            start: 226,
+            end: 290,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "select_case_only",
+                    start: 227,
+                    end: 243,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "select_case_only",
+                            start: 227,
+                            end: 243,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "selectcase a\n    case 1\n      a\n  endselect\n",
+                    start: 246,
+                    end: 290,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "selectcase a\n    case 1\n      a\n  endselect",
+                            start: 246,
+                            end: 289,
+                        },
+                        inner: [
+                            Pair {
+                                rule: select_statement,
+                                span: Span {
+                                    str: "selectcase a\n    case 1\n      a\n  endselect",
+                                    start: 246,
+                                    end: 289,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: selectcase_keyword,
+                                        span: Span {
+                                            str: "selectcase",
+                                            start: 246,
+                                            end: 256,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "a",
+                                            start: 257,
+                                            end: 258,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "a",
+                                                    start: 257,
+                                                    end: 258,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 257,
+                                                            end: 258,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: case_statement,
+                                        span: Span {
+                                            str: "case 1\n      a\n",
+                                            start: 263,
+                                            end: 278,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: case_keyword,
+                                                span: Span {
+                                                    str: "case",
+                                                    start: 263,
+                                                    end: 267,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: case_condition_list,
+                                                span: Span {
+                                                    str: "1",
+                                                    start: 268,
+                                                    end: 269,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: case_condition,
+                                                        span: Span {
+                                                            str: "1",
+                                                            start: 268,
+                                                            end: 269,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: integer_literal,
+                                                                span: Span {
+                                                                    str: "1",
+                                                                    start: 268,
+                                                                    end: 269,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "a\n",
+                                                    start: 276,
+                                                    end: 278,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 276,
+                                                            end: 277,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "a",
+                                                                    start: 276,
+                                                                    end: 277,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "a",
+                                                                            start: 276,
+                                                                            end: 277,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "a",
+                                                                                    start: 276,
+                                                                                    end: 277,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: endselect_keyword,
+                                        span: Span {
+                                            str: "endselect",
+                                            start: 280,
+                                            end: 289,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: EOI,
+        span: Span {
+            str: "",
+            start: 290,
+            end: 290,
+        },
+        inner: [],
+    },
+]
