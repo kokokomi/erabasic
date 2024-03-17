@@ -28,3 +28,12 @@ fn sif_statement() {
 
     assert_debug_snapshot!(file);
 }
+
+#[test]
+fn repeat_statement() {
+    let unparsed_file = fs::read_to_string("example/repeat_statement.erb").expect("cannot read file");
+    let file = EraBasicParser::parse(Rule::file, &unparsed_file)
+        .expect("unsuccessful parse");
+
+    assert_debug_snapshot!(file);
+}

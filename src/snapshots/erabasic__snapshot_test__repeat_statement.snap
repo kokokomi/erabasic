@@ -1,0 +1,266 @@
+---
+source: src/snapshot_test.rs
+expression: file
+---
+[
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@repeat_statement\n  #DIM sum\n  repeat 10\n    sum += COUNT\n  rend\n",
+            start: 0,
+            end: 65,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "repeat_statement",
+                    start: 1,
+                    end: 17,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "repeat_statement",
+                            start: 1,
+                            end: 17,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIM sum\n",
+                    start: 20,
+                    end: 29,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIM sum\n",
+                            start: 20,
+                            end: 29,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIM",
+                                    start: 20,
+                                    end: 24,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIM",
+                                            start: 21,
+                                            end: 24,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "sum",
+                                    start: 25,
+                                    end: 28,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "sum",
+                                            start: 25,
+                                            end: 28,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "repeat 10\n    sum += COUNT\n  rend\n",
+                    start: 31,
+                    end: 65,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "repeat 10\n    sum += COUNT\n  rend",
+                            start: 31,
+                            end: 64,
+                        },
+                        inner: [
+                            Pair {
+                                rule: repeat_statement,
+                                span: Span {
+                                    str: "repeat 10\n    sum += COUNT\n  rend",
+                                    start: 31,
+                                    end: 64,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: repeat_keyword,
+                                        span: Span {
+                                            str: "repeat",
+                                            start: 31,
+                                            end: 37,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "10",
+                                            start: 38,
+                                            end: 40,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "10",
+                                                    start: 38,
+                                                    end: 40,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "10",
+                                                            start: 38,
+                                                            end: 40,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: block,
+                                        span: Span {
+                                            str: "sum += COUNT\n",
+                                            start: 45,
+                                            end: 58,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: statement,
+                                                span: Span {
+                                                    str: "sum += COUNT",
+                                                    start: 45,
+                                                    end: 57,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: assign_statement,
+                                                        span: Span {
+                                                            str: "sum += COUNT",
+                                                            start: 45,
+                                                            end: 57,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: identifier,
+                                                                span: Span {
+                                                                    str: "sum",
+                                                                    start: 45,
+                                                                    end: 48,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                            Pair {
+                                                                rule: assign,
+                                                                span: Span {
+                                                                    str: "+=",
+                                                                    start: 49,
+                                                                    end: 51,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: assign_add,
+                                                                        span: Span {
+                                                                            str: "+=",
+                                                                            start: 49,
+                                                                            end: 51,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "COUNT",
+                                                                    start: 52,
+                                                                    end: 57,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "COUNT",
+                                                                            start: 52,
+                                                                            end: 57,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "COUNT",
+                                                                                    start: 52,
+                                                                                    end: 57,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: rend_keyword,
+                                        span: Span {
+                                            str: "rend",
+                                            start: 60,
+                                            end: 64,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: EOI,
+        span: Span {
+            str: "",
+            start: 65,
+            end: 65,
+        },
+        inner: [],
+    },
+]
