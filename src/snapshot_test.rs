@@ -64,3 +64,12 @@ fn selectcase_statement() {
 
     assert_debug_snapshot!(file);
 }
+
+#[test]
+fn preprocessor() {
+    let unparsed_file = fs::read_to_string("example/preprocessor.erb").expect("cannot read file");
+    let file = EraBasicParser::parse(Rule::file, &unparsed_file)
+        .expect("unsuccessful parse");
+
+    assert_debug_snapshot!(file);
+}

@@ -1,0 +1,1033 @@
+---
+source: src/snapshot_test.rs
+expression: file
+---
+[
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@preprocessor\n  #FUNCTION\n  #FUNCTIONS\n  #DIM number\n  #DIMS string\n  #DIM defaultNum = 10\n  #DIMS defaultStr = \"aaaa\"\n  #DIM arrayAssign = 1, 2, 3\n  #DIMS arrayAssignStr = \"a\", \"b\", \"c\"\n  #DIM array3, 10, 20, 30\n  #DIMS stringArray3, 10, 20, 30\n  #DIM REF refValue\n",
+            start: 0,
+            end: 266,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "preprocessor",
+                    start: 1,
+                    end: 13,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "preprocessor",
+                            start: 1,
+                            end: 13,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#FUNCTION\n",
+                    start: 16,
+                    end: 26,
+                },
+                inner: [
+                    Pair {
+                        rule: attribute_preprocessor,
+                        span: Span {
+                            str: "#FUNCTION\n",
+                            start: 16,
+                            end: 26,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#FUNCTION",
+                                    start: 16,
+                                    end: 25,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "FUNCTION",
+                                            start: 17,
+                                            end: 25,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#FUNCTIONS\n",
+                    start: 28,
+                    end: 39,
+                },
+                inner: [
+                    Pair {
+                        rule: attribute_preprocessor,
+                        span: Span {
+                            str: "#FUNCTIONS\n",
+                            start: 28,
+                            end: 39,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#FUNCTIONS",
+                                    start: 28,
+                                    end: 38,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "FUNCTIONS",
+                                            start: 29,
+                                            end: 38,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIM number\n",
+                    start: 41,
+                    end: 53,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIM number\n",
+                            start: 41,
+                            end: 53,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIM",
+                                    start: 41,
+                                    end: 45,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIM",
+                                            start: 42,
+                                            end: 45,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "number",
+                                    start: 46,
+                                    end: 52,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "number",
+                                            start: 46,
+                                            end: 52,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIMS string\n",
+                    start: 55,
+                    end: 68,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIMS string\n",
+                            start: 55,
+                            end: 68,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIMS",
+                                    start: 55,
+                                    end: 60,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIMS",
+                                            start: 56,
+                                            end: 60,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "string",
+                                    start: 61,
+                                    end: 67,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "string",
+                                            start: 61,
+                                            end: 67,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIM defaultNum = 10\n",
+                    start: 70,
+                    end: 91,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIM defaultNum = 10\n",
+                            start: 70,
+                            end: 91,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIM",
+                                    start: 70,
+                                    end: 74,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIM",
+                                            start: 71,
+                                            end: 74,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "defaultNum = 10",
+                                    start: 75,
+                                    end: 90,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "defaultNum",
+                                            start: 75,
+                                            end: 85,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: assign_none,
+                                        span: Span {
+                                            str: "=",
+                                            start: 86,
+                                            end: 87,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "10",
+                                            start: 88,
+                                            end: 90,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "10",
+                                                    start: 88,
+                                                    end: 90,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "10",
+                                                            start: 88,
+                                                            end: 90,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIMS defaultStr = \"aaaa\"\n",
+                    start: 93,
+                    end: 119,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIMS defaultStr = \"aaaa\"\n",
+                            start: 93,
+                            end: 119,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIMS",
+                                    start: 93,
+                                    end: 98,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIMS",
+                                            start: 94,
+                                            end: 98,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "defaultStr = \"aaaa\"",
+                                    start: 99,
+                                    end: 118,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "defaultStr",
+                                            start: 99,
+                                            end: 109,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: assign_none,
+                                        span: Span {
+                                            str: "=",
+                                            start: 110,
+                                            end: 111,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "\"aaaa\"",
+                                            start: 112,
+                                            end: 118,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "\"aaaa\"",
+                                                    start: 112,
+                                                    end: 118,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: string_literal,
+                                                        span: Span {
+                                                            str: "\"aaaa\"",
+                                                            start: 112,
+                                                            end: 118,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: string_body,
+                                                                span: Span {
+                                                                    str: "aaaa",
+                                                                    start: 113,
+                                                                    end: 117,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIM arrayAssign = 1, 2, 3\n",
+                    start: 121,
+                    end: 148,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIM arrayAssign = 1, 2, 3\n",
+                            start: 121,
+                            end: 148,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIM",
+                                    start: 121,
+                                    end: 125,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIM",
+                                            start: 122,
+                                            end: 125,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "arrayAssign = 1, 2, 3",
+                                    start: 126,
+                                    end: 147,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "arrayAssign",
+                                            start: 126,
+                                            end: 137,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: assign_none,
+                                        span: Span {
+                                            str: "=",
+                                            start: 138,
+                                            end: 139,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "1",
+                                            start: 140,
+                                            end: 141,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "1",
+                                                    start: 140,
+                                                    end: 141,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "1",
+                                                            start: 140,
+                                                            end: 141,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "2",
+                                            start: 143,
+                                            end: 144,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "2",
+                                                    start: 143,
+                                                    end: 144,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "2",
+                                                            start: 143,
+                                                            end: 144,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "3",
+                                            start: 146,
+                                            end: 147,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "3",
+                                                    start: 146,
+                                                    end: 147,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "3",
+                                                            start: 146,
+                                                            end: 147,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIMS arrayAssignStr = \"a\", \"b\", \"c\"\n",
+                    start: 150,
+                    end: 187,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIMS arrayAssignStr = \"a\", \"b\", \"c\"\n",
+                            start: 150,
+                            end: 187,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIMS",
+                                    start: 150,
+                                    end: 155,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIMS",
+                                            start: 151,
+                                            end: 155,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "arrayAssignStr = \"a\", \"b\", \"c\"",
+                                    start: 156,
+                                    end: 186,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "arrayAssignStr",
+                                            start: 156,
+                                            end: 170,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: assign_none,
+                                        span: Span {
+                                            str: "=",
+                                            start: 171,
+                                            end: 172,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "\"a\"",
+                                            start: 173,
+                                            end: 176,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "\"a\"",
+                                                    start: 173,
+                                                    end: 176,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: string_literal,
+                                                        span: Span {
+                                                            str: "\"a\"",
+                                                            start: 173,
+                                                            end: 176,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: string_body,
+                                                                span: Span {
+                                                                    str: "a",
+                                                                    start: 174,
+                                                                    end: 175,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "\"b\"",
+                                            start: 178,
+                                            end: 181,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "\"b\"",
+                                                    start: 178,
+                                                    end: 181,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: string_literal,
+                                                        span: Span {
+                                                            str: "\"b\"",
+                                                            start: 178,
+                                                            end: 181,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: string_body,
+                                                                span: Span {
+                                                                    str: "b",
+                                                                    start: 179,
+                                                                    end: 180,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "\"c\"",
+                                            start: 183,
+                                            end: 186,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "\"c\"",
+                                                    start: 183,
+                                                    end: 186,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: string_literal,
+                                                        span: Span {
+                                                            str: "\"c\"",
+                                                            start: 183,
+                                                            end: 186,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: string_body,
+                                                                span: Span {
+                                                                    str: "c",
+                                                                    start: 184,
+                                                                    end: 185,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIM array3, 10, 20, 30\n",
+                    start: 189,
+                    end: 213,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIM array3, 10, 20, 30\n",
+                            start: 189,
+                            end: 213,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIM",
+                                    start: 189,
+                                    end: 193,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIM",
+                                            start: 190,
+                                            end: 193,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_array_declare,
+                                span: Span {
+                                    str: "array3, 10, 20, 30",
+                                    start: 194,
+                                    end: 212,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "array3",
+                                            start: 194,
+                                            end: 200,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: integer_literal,
+                                        span: Span {
+                                            str: "10",
+                                            start: 202,
+                                            end: 204,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: integer_literal,
+                                        span: Span {
+                                            str: "20",
+                                            start: 206,
+                                            end: 208,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: integer_literal,
+                                        span: Span {
+                                            str: "30",
+                                            start: 210,
+                                            end: 212,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIMS stringArray3, 10, 20, 30\n",
+                    start: 215,
+                    end: 246,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIMS stringArray3, 10, 20, 30\n",
+                            start: 215,
+                            end: 246,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIMS",
+                                    start: 215,
+                                    end: 220,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIMS",
+                                            start: 216,
+                                            end: 220,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: preprocessor_array_declare,
+                                span: Span {
+                                    str: "stringArray3, 10, 20, 30",
+                                    start: 221,
+                                    end: 245,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "stringArray3",
+                                            start: 221,
+                                            end: 233,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: integer_literal,
+                                        span: Span {
+                                            str: "10",
+                                            start: 235,
+                                            end: 237,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: integer_literal,
+                                        span: Span {
+                                            str: "20",
+                                            start: 239,
+                                            end: 241,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: integer_literal,
+                                        span: Span {
+                                            str: "30",
+                                            start: 243,
+                                            end: 245,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: preprocessor,
+                span: Span {
+                    str: "#DIM REF refValue\n",
+                    start: 248,
+                    end: 266,
+                },
+                inner: [
+                    Pair {
+                        rule: declare_preprocessor,
+                        span: Span {
+                            str: "#DIM REF refValue\n",
+                            start: 248,
+                            end: 266,
+                        },
+                        inner: [
+                            Pair {
+                                rule: preprocessor_name,
+                                span: Span {
+                                    str: "#DIM",
+                                    start: 248,
+                                    end: 252,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "DIM",
+                                            start: 249,
+                                            end: 252,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: declare_modifier,
+                                span: Span {
+                                    str: "REF",
+                                    start: 253,
+                                    end: 256,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: declare_modifier,
+                                span: Span {
+                                    str: "ref",
+                                    start: 257,
+                                    end: 260,
+                                },
+                                inner: [],
+                            },
+                            Pair {
+                                rule: preprocessor_variable_declare,
+                                span: Span {
+                                    str: "Value",
+                                    start: 260,
+                                    end: 265,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: identifier,
+                                        span: Span {
+                                            str: "Value",
+                                            start: 260,
+                                            end: 265,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "",
+                    start: 266,
+                    end: 266,
+                },
+                inner: [],
+            },
+        ],
+    },
+    Pair {
+        rule: EOI,
+        span: Span {
+            str: "",
+            start: 266,
+            end: 266,
+        },
+        inner: [],
+    },
+]

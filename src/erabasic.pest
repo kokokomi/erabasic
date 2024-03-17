@@ -280,7 +280,7 @@ preprocessor_array_declare = {
     identifier ~ (comma ~ integer_literal)+
 }
 preprocessor_variable_declare = {
-    identifier ~ (assign_none ~ expression)?
+    identifier ~ (assign_none ~ expression_list)?
 }
 preprocessor_name = {
     sharp ~ identifier
@@ -290,6 +290,7 @@ declare_modifier = {
     | ^"CHARADATA"
     | ^"GLOBAL"
     | ^"CONST"
+    | ^"REF"
 }
 
 file = _{ SOI ~ (function_declare | NEWLINE)* ~ EOI }
