@@ -55,6 +55,7 @@ semi = _{ ";" }
 dot = _{ "." }
 at = _{ "@" }
 double_quote = _{ "\"" }
+sharp = _{ "#" }
 
 // comment
 COMMENT = { semi ~ comment_body }
@@ -163,6 +164,7 @@ binary_expression = {
 // functions
 function_declare = {
     at ~ function_identifier ~ function_parameters? ~ NEWLINE
+    ~ preprocessor*
     ~ function_body
 }
 function_parameters = {
@@ -259,6 +261,35 @@ case_condition = {
     | (is_keyword ~ conditional_operator ~ expression)
     | literal
     | identifier
+}
+
+preprocessor = {
+    declare_preprocessor
+    | attribute_preprocessor
+}
+attribute_preprocessor = {
+    preprocessor_name ~ NEWLINE
+}
+declare_preprocessor = {
+    preprocessor_name
+    ~ declare_modifier*
+    ~ (preprocessor_array_declare | preprocessor_variable_declare)
+    ~ NEWLINE
+}
+preprocessor_array_declare = {
+    identifier ~ (comma ~ integer_literal)+
+}
+preprocessor_variable_declare = {
+    identifier ~ (assign_none ~ expression)?
+}
+preprocessor_name = {
+    sharp ~ identifier
+}
+declare_modifier = {
+    ^"SAVEDATA"
+    | ^"CHARADATA"
+    | ^"GLOBAL"
+    | ^"CONST"
 }
 
 file = _{ SOI ~ (function_declare | NEWLINE)* ~ EOI }
