@@ -1,140 +1,311 @@
 ---
 source: src/snapshot_test.rs
-expression: result
+expression: file
 ---
-Pair {
-    rule: function_declare,
-    span: Span {
-        str: "@test_function\n  1 + 2\n\n",
-        start: 0,
-        end: 24,
-    },
-    inner: [
-        Pair {
-            rule: function_identifier,
-            span: Span {
-                str: "test_function",
-                start: 1,
-                end: 14,
-            },
-            inner: [
-                Pair {
-                    rule: identifier,
-                    span: Span {
-                        str: "test_function",
-                        start: 1,
-                        end: 14,
-                    },
-                    inner: [],
-                },
-            ],
+[
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@test_function\n  1 + 2\n\n",
+            start: 0,
+            end: 24,
         },
-        Pair {
-            rule: function_body,
-            span: Span {
-                str: "1 + 2\n\n",
-                start: 17,
-                end: 24,
-            },
-            inner: [
-                Pair {
-                    rule: statement,
-                    span: Span {
-                        str: "1 + 2\n",
-                        start: 17,
-                        end: 23,
-                    },
-                    inner: [
-                        Pair {
-                            rule: expression,
-                            span: Span {
-                                str: "1 + 2",
-                                start: 17,
-                                end: 22,
-                            },
-                            inner: [
-                                Pair {
-                                    rule: binary_expression,
-                                    span: Span {
-                                        str: "1 + 2",
-                                        start: 17,
-                                        end: 22,
-                                    },
-                                    inner: [
-                                        Pair {
-                                            rule: primary,
-                                            span: Span {
-                                                str: "1",
-                                                start: 17,
-                                                end: 18,
-                                            },
-                                            inner: [
-                                                Pair {
-                                                    rule: integer_literal,
-                                                    span: Span {
-                                                        str: "1",
-                                                        start: 17,
-                                                        end: 18,
-                                                    },
-                                                    inner: [],
-                                                },
-                                            ],
-                                        },
-                                        Pair {
-                                            rule: operator,
-                                            span: Span {
-                                                str: "+",
-                                                start: 19,
-                                                end: 20,
-                                            },
-                                            inner: [
-                                                Pair {
-                                                    rule: add_op,
-                                                    span: Span {
-                                                        str: "+",
-                                                        start: 19,
-                                                        end: 20,
-                                                    },
-                                                    inner: [],
-                                                },
-                                            ],
-                                        },
-                                        Pair {
-                                            rule: expression,
-                                            span: Span {
-                                                str: "2",
-                                                start: 21,
-                                                end: 22,
-                                            },
-                                            inner: [
-                                                Pair {
-                                                    rule: primary,
-                                                    span: Span {
-                                                        str: "2",
-                                                        start: 21,
-                                                        end: 22,
-                                                    },
-                                                    inner: [
-                                                        Pair {
-                                                            rule: integer_literal,
-                                                            span: Span {
-                                                                str: "2",
-                                                                start: 21,
-                                                                end: 22,
-                                                            },
-                                                            inner: [],
-                                                        },
-                                                    ],
-                                                },
-                                            ],
-                                        },
-                                    ],
-                                },
-                            ],
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "test_function",
+                    start: 1,
+                    end: 14,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "test_function",
+                            start: 1,
+                            end: 14,
                         },
-                    ],
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "1 + 2\n\n",
+                    start: 17,
+                    end: 24,
                 },
-            ],
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "1 + 2\n",
+                            start: 17,
+                            end: 23,
+                        },
+                        inner: [
+                            Pair {
+                                rule: expression,
+                                span: Span {
+                                    str: "1 + 2",
+                                    start: 17,
+                                    end: 22,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: binary_expression,
+                                        span: Span {
+                                            str: "1 + 2",
+                                            start: 17,
+                                            end: 22,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "1",
+                                                    start: 17,
+                                                    end: 18,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "1",
+                                                            start: 17,
+                                                            end: 18,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: operator,
+                                                span: Span {
+                                                    str: "+",
+                                                    start: 19,
+                                                    end: 20,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: add_op,
+                                                        span: Span {
+                                                            str: "+",
+                                                            start: 19,
+                                                            end: 20,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: expression,
+                                                span: Span {
+                                                    str: "2",
+                                                    start: 21,
+                                                    end: 22,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: primary,
+                                                        span: Span {
+                                                            str: "2",
+                                                            start: 21,
+                                                            end: 22,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: integer_literal,
+                                                                span: Span {
+                                                                    str: "2",
+                                                                    start: 21,
+                                                                    end: 22,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@test_empty\n\n",
+            start: 24,
+            end: 37,
         },
-    ],
-}
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "test_empty",
+                    start: 25,
+                    end: 35,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "test_empty",
+                            start: 25,
+                            end: 35,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "\n",
+                    start: 36,
+                    end: 37,
+                },
+                inner: [],
+            },
+        ],
+    },
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@test_arguments(a, b, c)\n\n",
+            start: 37,
+            end: 63,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "test_arguments",
+                    start: 38,
+                    end: 52,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "test_arguments",
+                            start: 38,
+                            end: 52,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_parameters,
+                span: Span {
+                    str: "(a, b, c)",
+                    start: 52,
+                    end: 61,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "a",
+                            start: 53,
+                            end: 54,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "b",
+                            start: 56,
+                            end: 57,
+                        },
+                        inner: [],
+                    },
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "c",
+                            start: 59,
+                            end: 60,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "\n",
+                    start: 62,
+                    end: 63,
+                },
+                inner: [],
+            },
+        ],
+    },
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@test_empty_argument()\n",
+            start: 63,
+            end: 86,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "test_empty_argument",
+                    start: 64,
+                    end: 83,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "test_empty_argument",
+                            start: 64,
+                            end: 83,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_parameters,
+                span: Span {
+                    str: "()",
+                    start: 83,
+                    end: 85,
+                },
+                inner: [],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "",
+                    start: 86,
+                    end: 86,
+                },
+                inner: [],
+            },
+        ],
+    },
+    Pair {
+        rule: EOI,
+        span: Span {
+            str: "",
+            start: 86,
+            end: 86,
+        },
+        inner: [],
+    },
+]

@@ -1,0 +1,871 @@
+---
+source: src/snapshot_test.rs
+expression: file
+---
+[
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@if_statement\n  if a ; comment\n    ; if block\n  endif ; comment\n\n",
+            start: 0,
+            end: 65,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "if_statement",
+                    start: 1,
+                    end: 13,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "if_statement",
+                            start: 1,
+                            end: 13,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "if a ; comment\n    ; if block\n  endif ; comment\n\n",
+                    start: 16,
+                    end: 65,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "if a ; comment\n    ; if block\n  endif ; comment\n",
+                            start: 16,
+                            end: 64,
+                        },
+                        inner: [
+                            Pair {
+                                rule: if_statement,
+                                span: Span {
+                                    str: "if a ; comment\n    ; if block\n  endif",
+                                    start: 16,
+                                    end: 53,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: if_keyword,
+                                        span: Span {
+                                            str: "if",
+                                            start: 16,
+                                            end: 18,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "a",
+                                            start: 19,
+                                            end: 20,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "a",
+                                                    start: 19,
+                                                    end: 20,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 19,
+                                                            end: 20,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: COMMENT,
+                                        span: Span {
+                                            str: "; comment",
+                                            start: 21,
+                                            end: 30,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: COMMENT,
+                                        span: Span {
+                                            str: "; if block",
+                                            start: 35,
+                                            end: 45,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: block,
+                                        span: Span {
+                                            str: "\n",
+                                            start: 45,
+                                            end: 46,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: endif_keyword,
+                                        span: Span {
+                                            str: "endif",
+                                            start: 48,
+                                            end: 53,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                            Pair {
+                                rule: COMMENT,
+                                span: Span {
+                                    str: "; comment",
+                                    start: 54,
+                                    end: 63,
+                                },
+                                inner: [],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@if_else_statement\n  if a\n    ; if block\n  else\n    ; else block\n  endif\n\n",
+            start: 65,
+            end: 139,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "if_else_statement",
+                    start: 66,
+                    end: 83,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "if_else_statement",
+                            start: 66,
+                            end: 83,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "if a\n    ; if block\n  else\n    ; else block\n  endif\n\n",
+                    start: 86,
+                    end: 139,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "if a\n    ; if block\n  else\n    ; else block\n  endif\n",
+                            start: 86,
+                            end: 138,
+                        },
+                        inner: [
+                            Pair {
+                                rule: if_statement,
+                                span: Span {
+                                    str: "if a\n    ; if block\n  else\n    ; else block\n  endif",
+                                    start: 86,
+                                    end: 137,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: if_keyword,
+                                        span: Span {
+                                            str: "if",
+                                            start: 86,
+                                            end: 88,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "a",
+                                            start: 89,
+                                            end: 90,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "a",
+                                                    start: 89,
+                                                    end: 90,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 89,
+                                                            end: 90,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: COMMENT,
+                                        span: Span {
+                                            str: "; if block",
+                                            start: 95,
+                                            end: 105,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: block,
+                                        span: Span {
+                                            str: "\n",
+                                            start: 105,
+                                            end: 106,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: else_statement,
+                                        span: Span {
+                                            str: "else\n    ; else block\n",
+                                            start: 108,
+                                            end: 130,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: else_keyword,
+                                                span: Span {
+                                                    str: "else",
+                                                    start: 108,
+                                                    end: 112,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: COMMENT,
+                                                span: Span {
+                                                    str: "; else block",
+                                                    start: 117,
+                                                    end: 129,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "\n",
+                                                    start: 129,
+                                                    end: 130,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: endif_keyword,
+                                        span: Span {
+                                            str: "endif",
+                                            start: 132,
+                                            end: 137,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@if_elseif_else_statement\n  if a\n    ; if block\n  elseif a == b\n    ; else if block\n  else\n    ; else block\n  endif\n\n",
+            start: 139,
+            end: 256,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "if_elseif_else_statement",
+                    start: 140,
+                    end: 164,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "if_elseif_else_statement",
+                            start: 140,
+                            end: 164,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  else\n    ; else block\n  endif\n\n",
+                    start: 167,
+                    end: 256,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  else\n    ; else block\n  endif\n",
+                            start: 167,
+                            end: 255,
+                        },
+                        inner: [
+                            Pair {
+                                rule: if_statement,
+                                span: Span {
+                                    str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  else\n    ; else block\n  endif",
+                                    start: 167,
+                                    end: 254,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: if_keyword,
+                                        span: Span {
+                                            str: "if",
+                                            start: 167,
+                                            end: 169,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "a",
+                                            start: 170,
+                                            end: 171,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "a",
+                                                    start: 170,
+                                                    end: 171,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 170,
+                                                            end: 171,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: COMMENT,
+                                        span: Span {
+                                            str: "; if block",
+                                            start: 176,
+                                            end: 186,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: block,
+                                        span: Span {
+                                            str: "\n",
+                                            start: 186,
+                                            end: 187,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: else_if_statement,
+                                        span: Span {
+                                            str: "elseif a == b\n    ; else if block\n",
+                                            start: 189,
+                                            end: 223,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: elseif_keyword,
+                                                span: Span {
+                                                    str: "elseif",
+                                                    start: 189,
+                                                    end: 195,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: expression,
+                                                span: Span {
+                                                    str: "a == b",
+                                                    start: 196,
+                                                    end: 202,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: binary_expression,
+                                                        span: Span {
+                                                            str: "a == b",
+                                                            start: 196,
+                                                            end: 202,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: primary,
+                                                                span: Span {
+                                                                    str: "a",
+                                                                    start: 196,
+                                                                    end: 197,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: identifier,
+                                                                        span: Span {
+                                                                            str: "a",
+                                                                            start: 196,
+                                                                            end: 197,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: operator,
+                                                                span: Span {
+                                                                    str: "==",
+                                                                    start: 198,
+                                                                    end: 200,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: conditional_operator,
+                                                                        span: Span {
+                                                                            str: "==",
+                                                                            start: 198,
+                                                                            end: 200,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: equals_op,
+                                                                                span: Span {
+                                                                                    str: "==",
+                                                                                    start: 198,
+                                                                                    end: 200,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "b",
+                                                                    start: 201,
+                                                                    end: 202,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "b",
+                                                                            start: 201,
+                                                                            end: 202,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "b",
+                                                                                    start: 201,
+                                                                                    end: 202,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: COMMENT,
+                                                span: Span {
+                                                    str: "; else if block",
+                                                    start: 207,
+                                                    end: 222,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "\n",
+                                                    start: 222,
+                                                    end: 223,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: else_statement,
+                                        span: Span {
+                                            str: "else\n    ; else block\n",
+                                            start: 225,
+                                            end: 247,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: else_keyword,
+                                                span: Span {
+                                                    str: "else",
+                                                    start: 225,
+                                                    end: 229,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: COMMENT,
+                                                span: Span {
+                                                    str: "; else block",
+                                                    start: 234,
+                                                    end: 246,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "\n",
+                                                    start: 246,
+                                                    end: 247,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: endif_keyword,
+                                        span: Span {
+                                            str: "endif",
+                                            start: 249,
+                                            end: 254,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@if_elseif_statement\n  if a\n    ; if block\n  elseif a == b\n    ; else if block\n  endif\n",
+            start: 256,
+            end: 343,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "if_elseif_statement",
+                    start: 257,
+                    end: 276,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "if_elseif_statement",
+                            start: 257,
+                            end: 276,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  endif\n",
+                    start: 279,
+                    end: 343,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  endif\n",
+                            start: 279,
+                            end: 343,
+                        },
+                        inner: [
+                            Pair {
+                                rule: if_statement,
+                                span: Span {
+                                    str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  endif",
+                                    start: 279,
+                                    end: 342,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: if_keyword,
+                                        span: Span {
+                                            str: "if",
+                                            start: 279,
+                                            end: 281,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "a",
+                                            start: 282,
+                                            end: 283,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "a",
+                                                    start: 282,
+                                                    end: 283,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 282,
+                                                            end: 283,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: COMMENT,
+                                        span: Span {
+                                            str: "; if block",
+                                            start: 288,
+                                            end: 298,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: block,
+                                        span: Span {
+                                            str: "\n",
+                                            start: 298,
+                                            end: 299,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: else_if_statement,
+                                        span: Span {
+                                            str: "elseif a == b\n    ; else if block\n",
+                                            start: 301,
+                                            end: 335,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: elseif_keyword,
+                                                span: Span {
+                                                    str: "elseif",
+                                                    start: 301,
+                                                    end: 307,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: expression,
+                                                span: Span {
+                                                    str: "a == b",
+                                                    start: 308,
+                                                    end: 314,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: binary_expression,
+                                                        span: Span {
+                                                            str: "a == b",
+                                                            start: 308,
+                                                            end: 314,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: primary,
+                                                                span: Span {
+                                                                    str: "a",
+                                                                    start: 308,
+                                                                    end: 309,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: identifier,
+                                                                        span: Span {
+                                                                            str: "a",
+                                                                            start: 308,
+                                                                            end: 309,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: operator,
+                                                                span: Span {
+                                                                    str: "==",
+                                                                    start: 310,
+                                                                    end: 312,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: conditional_operator,
+                                                                        span: Span {
+                                                                            str: "==",
+                                                                            start: 310,
+                                                                            end: 312,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: equals_op,
+                                                                                span: Span {
+                                                                                    str: "==",
+                                                                                    start: 310,
+                                                                                    end: 312,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                            Pair {
+                                                                rule: expression,
+                                                                span: Span {
+                                                                    str: "b",
+                                                                    start: 313,
+                                                                    end: 314,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "b",
+                                                                            start: 313,
+                                                                            end: 314,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: identifier,
+                                                                                span: Span {
+                                                                                    str: "b",
+                                                                                    start: 313,
+                                                                                    end: 314,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                            Pair {
+                                                rule: COMMENT,
+                                                span: Span {
+                                                    str: "; else if block",
+                                                    start: 319,
+                                                    end: 334,
+                                                },
+                                                inner: [],
+                                            },
+                                            Pair {
+                                                rule: block,
+                                                span: Span {
+                                                    str: "\n",
+                                                    start: 334,
+                                                    end: 335,
+                                                },
+                                                inner: [],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: endif_keyword,
+                                        span: Span {
+                                            str: "endif",
+                                            start: 337,
+                                            end: 342,
+                                        },
+                                        inner: [],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: EOI,
+        span: Span {
+            str: "",
+            start: 343,
+            end: 343,
+        },
+        inner: [],
+    },
+]
