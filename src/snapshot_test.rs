@@ -37,3 +37,21 @@ fn repeat_statement() {
 
     assert_debug_snapshot!(file);
 }
+
+#[test]
+fn while_statement() {
+    let unparsed_file = fs::read_to_string("example/while_statement.erb").expect("cannot read file");
+    let file = EraBasicParser::parse(Rule::file, &unparsed_file)
+        .expect("unsuccessful parse");
+
+    assert_debug_snapshot!(file);
+}
+
+#[test]
+fn do_loop_statement() {
+    let unparsed_file = fs::read_to_string("example/do_loop_statement.erb").expect("cannot read file");
+    let file = EraBasicParser::parse(Rule::file, &unparsed_file)
+        .expect("unsuccessful parse");
+
+    assert_debug_snapshot!(file);
+}

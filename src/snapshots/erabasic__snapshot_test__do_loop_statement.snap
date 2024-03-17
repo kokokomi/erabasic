@@ -1,0 +1,139 @@
+---
+source: src/snapshot_test.rs
+expression: file
+---
+[
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@do_loop_statement\n  do\n    ; block\n  loop 1\n",
+            start: 0,
+            end: 45,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "do_loop_statement",
+                    start: 1,
+                    end: 18,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "do_loop_statement",
+                            start: 1,
+                            end: 18,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "do\n    ; block\n  loop 1\n",
+                    start: 21,
+                    end: 45,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "do\n    ; block\n  loop 1",
+                            start: 21,
+                            end: 44,
+                        },
+                        inner: [
+                            Pair {
+                                rule: do_loop_statement,
+                                span: Span {
+                                    str: "do\n    ; block\n  loop 1",
+                                    start: 21,
+                                    end: 44,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: do_keyword,
+                                        span: Span {
+                                            str: "do",
+                                            start: 21,
+                                            end: 23,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: COMMENT,
+                                        span: Span {
+                                            str: "; block",
+                                            start: 28,
+                                            end: 35,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: block,
+                                        span: Span {
+                                            str: "\n",
+                                            start: 35,
+                                            end: 36,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: loop_keyword,
+                                        span: Span {
+                                            str: "loop",
+                                            start: 38,
+                                            end: 42,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "1",
+                                            start: 43,
+                                            end: 44,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "1",
+                                                    start: 43,
+                                                    end: 44,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: integer_literal,
+                                                        span: Span {
+                                                            str: "1",
+                                                            start: 43,
+                                                            end: 44,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: EOI,
+        span: Span {
+            str: "",
+            start: 45,
+            end: 45,
+        },
+        inner: [],
+    },
+]
