@@ -1,0 +1,450 @@
+---
+source: src/snapshot_test.rs
+expression: file
+---
+[
+    Pair {
+        rule: function_declare,
+        span: Span {
+            str: "@sif_statement\n  sif a\n    a = 2\n  sif b\n    sif 1 == 1\n      b = 2\n",
+            start: 0,
+            end: 68,
+        },
+        inner: [
+            Pair {
+                rule: function_identifier,
+                span: Span {
+                    str: "sif_statement",
+                    start: 1,
+                    end: 14,
+                },
+                inner: [
+                    Pair {
+                        rule: identifier,
+                        span: Span {
+                            str: "sif_statement",
+                            start: 1,
+                            end: 14,
+                        },
+                        inner: [],
+                    },
+                ],
+            },
+            Pair {
+                rule: function_body,
+                span: Span {
+                    str: "sif a\n    a = 2\n  sif b\n    sif 1 == 1\n      b = 2\n",
+                    start: 17,
+                    end: 68,
+                },
+                inner: [
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "sif a\n    a = 2",
+                            start: 17,
+                            end: 32,
+                        },
+                        inner: [
+                            Pair {
+                                rule: sif_statement,
+                                span: Span {
+                                    str: "sif a\n    a = 2",
+                                    start: 17,
+                                    end: 32,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: sif_keyword,
+                                        span: Span {
+                                            str: "sif",
+                                            start: 17,
+                                            end: 20,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "a",
+                                            start: 21,
+                                            end: 22,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "a",
+                                                    start: 21,
+                                                    end: 22,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 21,
+                                                            end: 22,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: statement,
+                                        span: Span {
+                                            str: "a = 2",
+                                            start: 27,
+                                            end: 32,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: assign_statement,
+                                                span: Span {
+                                                    str: "a = 2",
+                                                    start: 27,
+                                                    end: 32,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "a",
+                                                            start: 27,
+                                                            end: 28,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: assign,
+                                                        span: Span {
+                                                            str: "=",
+                                                            start: 29,
+                                                            end: 30,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: assign_none,
+                                                                span: Span {
+                                                                    str: "=",
+                                                                    start: 29,
+                                                                    end: 30,
+                                                                },
+                                                                inner: [],
+                                                            },
+                                                        ],
+                                                    },
+                                                    Pair {
+                                                        rule: expression,
+                                                        span: Span {
+                                                            str: "2",
+                                                            start: 31,
+                                                            end: 32,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: primary,
+                                                                span: Span {
+                                                                    str: "2",
+                                                                    start: 31,
+                                                                    end: 32,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: integer_literal,
+                                                                        span: Span {
+                                                                            str: "2",
+                                                                            start: 31,
+                                                                            end: 32,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                    Pair {
+                        rule: statement,
+                        span: Span {
+                            str: "sif b\n    sif 1 == 1\n      b = 2",
+                            start: 35,
+                            end: 67,
+                        },
+                        inner: [
+                            Pair {
+                                rule: sif_statement,
+                                span: Span {
+                                    str: "sif b\n    sif 1 == 1\n      b = 2",
+                                    start: 35,
+                                    end: 67,
+                                },
+                                inner: [
+                                    Pair {
+                                        rule: sif_keyword,
+                                        span: Span {
+                                            str: "sif",
+                                            start: 35,
+                                            end: 38,
+                                        },
+                                        inner: [],
+                                    },
+                                    Pair {
+                                        rule: expression,
+                                        span: Span {
+                                            str: "b",
+                                            start: 39,
+                                            end: 40,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: primary,
+                                                span: Span {
+                                                    str: "b",
+                                                    start: 39,
+                                                    end: 40,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: identifier,
+                                                        span: Span {
+                                                            str: "b",
+                                                            start: 39,
+                                                            end: 40,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                    Pair {
+                                        rule: statement,
+                                        span: Span {
+                                            str: "sif 1 == 1\n      b = 2",
+                                            start: 45,
+                                            end: 67,
+                                        },
+                                        inner: [
+                                            Pair {
+                                                rule: sif_statement,
+                                                span: Span {
+                                                    str: "sif 1 == 1\n      b = 2",
+                                                    start: 45,
+                                                    end: 67,
+                                                },
+                                                inner: [
+                                                    Pair {
+                                                        rule: sif_keyword,
+                                                        span: Span {
+                                                            str: "sif",
+                                                            start: 45,
+                                                            end: 48,
+                                                        },
+                                                        inner: [],
+                                                    },
+                                                    Pair {
+                                                        rule: expression,
+                                                        span: Span {
+                                                            str: "1 == 1",
+                                                            start: 49,
+                                                            end: 55,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: binary_expression,
+                                                                span: Span {
+                                                                    str: "1 == 1",
+                                                                    start: 49,
+                                                                    end: 55,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: primary,
+                                                                        span: Span {
+                                                                            str: "1",
+                                                                            start: 49,
+                                                                            end: 50,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: integer_literal,
+                                                                                span: Span {
+                                                                                    str: "1",
+                                                                                    start: 49,
+                                                                                    end: 50,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: operator,
+                                                                        span: Span {
+                                                                            str: "==",
+                                                                            start: 51,
+                                                                            end: 53,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: conditional_operator,
+                                                                                span: Span {
+                                                                                    str: "==",
+                                                                                    start: 51,
+                                                                                    end: 53,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: equals_op,
+                                                                                        span: Span {
+                                                                                            str: "==",
+                                                                                            start: 51,
+                                                                                            end: 53,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: expression,
+                                                                        span: Span {
+                                                                            str: "1",
+                                                                            start: 54,
+                                                                            end: 55,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: primary,
+                                                                                span: Span {
+                                                                                    str: "1",
+                                                                                    start: 54,
+                                                                                    end: 55,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: integer_literal,
+                                                                                        span: Span {
+                                                                                            str: "1",
+                                                                                            start: 54,
+                                                                                            end: 55,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                    Pair {
+                                                        rule: statement,
+                                                        span: Span {
+                                                            str: "b = 2",
+                                                            start: 62,
+                                                            end: 67,
+                                                        },
+                                                        inner: [
+                                                            Pair {
+                                                                rule: assign_statement,
+                                                                span: Span {
+                                                                    str: "b = 2",
+                                                                    start: 62,
+                                                                    end: 67,
+                                                                },
+                                                                inner: [
+                                                                    Pair {
+                                                                        rule: identifier,
+                                                                        span: Span {
+                                                                            str: "b",
+                                                                            start: 62,
+                                                                            end: 63,
+                                                                        },
+                                                                        inner: [],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: assign,
+                                                                        span: Span {
+                                                                            str: "=",
+                                                                            start: 64,
+                                                                            end: 65,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: assign_none,
+                                                                                span: Span {
+                                                                                    str: "=",
+                                                                                    start: 64,
+                                                                                    end: 65,
+                                                                                },
+                                                                                inner: [],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                    Pair {
+                                                                        rule: expression,
+                                                                        span: Span {
+                                                                            str: "2",
+                                                                            start: 66,
+                                                                            end: 67,
+                                                                        },
+                                                                        inner: [
+                                                                            Pair {
+                                                                                rule: primary,
+                                                                                span: Span {
+                                                                                    str: "2",
+                                                                                    start: 66,
+                                                                                    end: 67,
+                                                                                },
+                                                                                inner: [
+                                                                                    Pair {
+                                                                                        rule: integer_literal,
+                                                                                        span: Span {
+                                                                                            str: "2",
+                                                                                            start: 66,
+                                                                                            end: 67,
+                                                                                        },
+                                                                                        inner: [],
+                                                                                    },
+                                                                                ],
+                                                                            },
+                                                                        ],
+                                                                    },
+                                                                ],
+                                                            },
+                                                        ],
+                                                    },
+                                                ],
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ],
+    },
+    Pair {
+        rule: EOI,
+        span: Span {
+            str: "",
+            start: 68,
+            end: 68,
+        },
+        inner: [],
+    },
+]

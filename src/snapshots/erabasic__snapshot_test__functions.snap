@@ -41,9 +41,9 @@ expression: file
                     Pair {
                         rule: statement,
                         span: Span {
-                            str: "1 + 2\n",
+                            str: "1 + 2",
                             start: 17,
-                            end: 23,
+                            end: 22,
                         },
                         inner: [
                             Pair {

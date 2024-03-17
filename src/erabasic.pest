@@ -174,7 +174,7 @@ function_body = {
 	(statement | NEWLINE)*
 }
 statement = {
-  (sif_statement
+  sif_statement
   | if_statement
   | repeat_statement
   | for_statement
@@ -184,7 +184,7 @@ statement = {
   | assign_statement
   | break_keyword
   | continue_keyword
-  | expression) ~ NEWLINE
+  | expression
 }
 
 assign_statement = {

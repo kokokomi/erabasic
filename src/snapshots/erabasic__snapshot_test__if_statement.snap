@@ -41,9 +41,9 @@ expression: file
                     Pair {
                         rule: statement,
                         span: Span {
-                            str: "if a ; comment\n    ; if block\n  endif ; comment\n",
+                            str: "if a ; comment\n    ; if block\n  endif",
                             start: 16,
-                            end: 64,
+                            end: 53,
                         },
                         inner: [
                             Pair {
@@ -130,16 +130,16 @@ expression: file
                                     },
                                 ],
                             },
-                            Pair {
-                                rule: COMMENT,
-                                span: Span {
-                                    str: "; comment",
-                                    start: 54,
-                                    end: 63,
-                                },
-                                inner: [],
-                            },
                         ],
+                    },
+                    Pair {
+                        rule: COMMENT,
+                        span: Span {
+                            str: "; comment",
+                            start: 54,
+                            end: 63,
+                        },
+                        inner: [],
                     },
                 ],
             },
@@ -183,9 +183,9 @@ expression: file
                     Pair {
                         rule: statement,
                         span: Span {
-                            str: "if a\n    ; if block\n  else\n    ; else block\n  endif\n",
+                            str: "if a\n    ; if block\n  else\n    ; else block\n  endif",
                             start: 86,
-                            end: 138,
+                            end: 137,
                         },
                         inner: [
                             Pair {
@@ -344,9 +344,9 @@ expression: file
                     Pair {
                         rule: statement,
                         span: Span {
-                            str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  else\n    ; else block\n  endif\n",
+                            str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  else\n    ; else block\n  endif",
                             start: 167,
-                            end: 255,
+                            end: 254,
                         },
                         inner: [
                             Pair {
@@ -639,9 +639,9 @@ expression: file
                     Pair {
                         rule: statement,
                         span: Span {
-                            str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  endif\n",
+                            str: "if a\n    ; if block\n  elseif a == b\n    ; else if block\n  endif",
                             start: 279,
-                            end: 343,
+                            end: 342,
                         },
                         inner: [
                             Pair {
