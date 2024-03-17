@@ -5,9 +5,9 @@ expression: result
 Pair {
     rule: function_declare,
     span: Span {
-        str: "@test_function\r\n  1 + 2\r\n\r\n",
+        str: "@test_function\n  1 + 2\n\n",
         start: 0,
-        end: 27,
+        end: 24,
     },
     inner: [
         Pair {
@@ -32,49 +32,49 @@ Pair {
         Pair {
             rule: function_body,
             span: Span {
-                str: "1 + 2\r\n\r\n",
-                start: 18,
-                end: 27,
+                str: "1 + 2\n\n",
+                start: 17,
+                end: 24,
             },
             inner: [
                 Pair {
                     rule: statement,
                     span: Span {
-                        str: "1 + 2\r\n",
-                        start: 18,
-                        end: 25,
+                        str: "1 + 2\n",
+                        start: 17,
+                        end: 23,
                     },
                     inner: [
                         Pair {
                             rule: expression,
                             span: Span {
                                 str: "1 + 2",
-                                start: 18,
-                                end: 23,
+                                start: 17,
+                                end: 22,
                             },
                             inner: [
                                 Pair {
                                     rule: binary_expression,
                                     span: Span {
                                         str: "1 + 2",
-                                        start: 18,
-                                        end: 23,
+                                        start: 17,
+                                        end: 22,
                                     },
                                     inner: [
                                         Pair {
                                             rule: primary,
                                             span: Span {
                                                 str: "1",
-                                                start: 18,
-                                                end: 19,
+                                                start: 17,
+                                                end: 18,
                                             },
                                             inner: [
                                                 Pair {
                                                     rule: integer_literal,
                                                     span: Span {
                                                         str: "1",
-                                                        start: 18,
-                                                        end: 19,
+                                                        start: 17,
+                                                        end: 18,
                                                     },
                                                     inner: [],
                                                 },
@@ -84,16 +84,16 @@ Pair {
                                             rule: operator,
                                             span: Span {
                                                 str: "+",
-                                                start: 20,
-                                                end: 21,
+                                                start: 19,
+                                                end: 20,
                                             },
                                             inner: [
                                                 Pair {
                                                     rule: add_op,
                                                     span: Span {
                                                         str: "+",
-                                                        start: 20,
-                                                        end: 21,
+                                                        start: 19,
+                                                        end: 20,
                                                     },
                                                     inner: [],
                                                 },
@@ -103,24 +103,24 @@ Pair {
                                             rule: expression,
                                             span: Span {
                                                 str: "2",
-                                                start: 22,
-                                                end: 23,
+                                                start: 21,
+                                                end: 22,
                                             },
                                             inner: [
                                                 Pair {
                                                     rule: primary,
                                                     span: Span {
                                                         str: "2",
-                                                        start: 22,
-                                                        end: 23,
+                                                        start: 21,
+                                                        end: 22,
                                                     },
                                                     inner: [
                                                         Pair {
                                                             rule: integer_literal,
                                                             span: Span {
                                                                 str: "2",
-                                                                start: 22,
-                                                                end: 23,
+                                                                start: 21,
+                                                                end: 22,
                                                             },
                                                             inner: [],
                                                         },
